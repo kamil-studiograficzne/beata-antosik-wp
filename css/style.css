@@ -1,24 +1,3 @@
-/*!
-Theme Name: Beata Antosik Clinic
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: beata-antosik-clinic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Beata Antosik Clinic is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
 .navbar .collapse .nav--container .navbar-nav .nav-item .dropdown-menu .dropdown-item, .navbar .collapse .nav--container .navbar-nav .nav-link, .navbar .collapse .reservation-btn {
   font-size: 1rem;
   font-weight: 400;
@@ -103,9 +82,29 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     padding: 10px 20px;
   }
 }
-.carousel-item .image-fit {
-  object-fit: cover;
+.single-slide-div {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   height: 500px;
+}
+.single-slide-div .slide-container {
+  height: 100%;
+}
+.single-slide-div .slide-container .slide-text-column {
+  height: 100%;
+}
+.single-slide-div .slide-container .slide-text-column .text-div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+.single-slide-div .slide-container .slide-text-column .text-div h1 {
+  text-align: right;
+}
+.single-slide-div .slide-container .slide-text-column .text-div p {
+  text-align: justify;
 }
 
 /*# sourceMappingURL=style.css.map */

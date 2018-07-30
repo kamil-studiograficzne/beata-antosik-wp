@@ -15,12 +15,20 @@ Template Post Type: page
         while ( $carousel->have_posts() ) : $carousel->the_post(); $activeClass ++
         ?>
         <?php if($activeClass == 1) : ?>
-            <div class="carousel-item active">
+            <div class="carousel-item single-slide-div active" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
         <?php else : ?>
-            <div class="carousel-item">
-        <?php endif; ?>
-            <img class="d-block w-100 image-fit" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="First slide">
-        </div>
+            <div class="carousel-item single-slide-div" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')">
+            <?php endif; ?>
+                <div class="container slide-container">
+                    <div class="col-md-6 slide-text-column">
+                        <div class="text-div">
+                            <?php the_content(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
         <?php
         endwhile;
     ?>
