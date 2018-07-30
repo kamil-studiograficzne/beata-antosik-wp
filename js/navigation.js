@@ -104,3 +104,5 @@
 		}
 	}( container ) );
 } )();
+let menuLink = document.querySelector('.nav-item a');
+menuLink.classList.add('nav-link');

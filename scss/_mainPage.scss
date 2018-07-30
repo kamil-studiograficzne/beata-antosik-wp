@@ -1,0 +1,122 @@
+/*!
+Theme Name: Beata Antosik Clinic
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: beata-antosik-clinic
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Beata Antosik Clinic is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+$darkBlue: #203353;
+$darkGray: #1B2028;
+$lightGrey: #CFD4D5;
+%font-sixteen {
+    font-size:1rem;
+    font-weight:400;
+    line-height:100%;
+}
+
+%custom-btn {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    border-color: $darkBlue;
+    background-color:$darkBlue;
+    @extend %font-sixteen;
+    color:white;
+    padding:16px 30px;
+    transition: 0.2 ease-in-out;
+}
+
+%custom-btn-hover{
+    background-color: #fff;
+    color: $darkBlue;
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar{
+    @media screen and (min-width: 1155px){
+        padding:1.5rem 2.5rem;
+    }
+
+    .navbar-brand{
+        width:18rem;
+        .logo{
+            width:100%;
+            margin-top: -9px;
+        }
+    }
+    .collapse{
+        .nav--container{
+            width:100%;
+            .navbar-nav{
+                @media screen and (max-width: 992px) {
+                    margin-top:20px;
+                }
+                .nav-link{
+                    @media screen and (min-width: 1326px) {
+                        padding-left:20px;
+                        padding-right:20px;
+                    }
+                    @media screen and (max-width: 992px) {
+                        text-align:center;
+                        padding:12 px;
+                    }
+                    color:$darkBlue;
+                    @extend %font-sixteen;
+                    text-transform:uppercase;
+                    transition: 0.2s ease-in-out;
+                }
+                .nav-item{
+                    .dropdown-menu{
+                        .dropdown-item{
+                            @extend %font-sixteen;
+                            color:$darkBlue;
+                            text-transform: uppercase;
+                            @media screen and (max-width: 992px){
+                                 text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .reservation-btn{
+            @media screen and (max-width:992px) {
+                margin: 0 auto;
+                display: block;
+                width: 200px;
+                margin-top: 20px;
+            }
+            @extend %custom-btn;
+            @media screen and (max-width:1200px) {
+                padding: 10px 20px;
+            }
+        }
+        .reservation-btn:hover{
+            @extend %custom-btn-hover;
+        }
+    }
+}
+
+.carousel-item{
+    .image-fit{
+        object-fit: cover;
+        height:500px;
+    }
+}
