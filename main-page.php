@@ -23,16 +23,17 @@ Template Post Type: page
                     <div class="col-md-6 slide-text-column">
                         <div class="text-div">
                             <?php the_content(); ?>
+                            <a href="<?php the_field('slider_see_more'); ?>" class="btn btn-outline-primary custom-btn"> Zobacz więcej</a>
                         </div>
                     </div>
                 </div>
             </div>
-        
+
 
         <?php
         endwhile;
     ?>
-    
+
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -42,6 +43,29 @@ Template Post Type: page
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div>
+<div class="container-fluid">
+    <div class="row full-width-padding">
+    <?php
+        if (have_posts()) :
+            while ( have_posts() ) : the_post();
+                ?>
+                    <div class="col-xs-12 col-lg-5 main-left-column">
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Beata Antosik Clinic" class="img-fluid">
+                    </div>
+                    <div class="col-xs-12 col-lg-7 main-right-column">
+                        <?php the_content(); ?>
+                    </div>
+                <?php
+            endwhile;
+            else :
+            ?>
+            <p>Sorry no posts matched your criteria.</p>
+            <?php
+        endif;
+    ?>
+
+    </div>
 </div>
 
 

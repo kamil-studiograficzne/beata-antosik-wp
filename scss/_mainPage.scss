@@ -8,11 +8,17 @@ $lightGrey: #CFD4D5;
     line-height:100%;
 }
 
+%paragraph {
+    font-size:1rem;
+    font-weight:400;
+    line-height: 28px;
+}
+
 %custom-btn {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
-    border-color: $darkBlue;
-    background-color:$darkBlue;
+    border-color: transparent !important;
+    background-color:$darkBlue !important;
     @extend %font-sixteen;
     color:white;
     padding:16px 30px;
@@ -20,17 +26,47 @@ $lightGrey: #CFD4D5;
 }
 
 %custom-btn-hover{
-    background-color: #fff;
-    color: $darkBlue;
+    background-color: #253c63 !important;
+    color:white;
+}
+
+%before-vert-line{
+    content:'';
+    display: inline-block;
+    width:4px;
+    height:1.9rem;
+    margin-right:10px;
+    background-color:$lightGrey;
 }
 
 *{
     font-family: 'Open Sans', sans-serif;
 }
 
+p{
+    @extend %paragraph;
+    color:$darkBlue;
+}
+
+h2{
+    font-size:2.4rem;
+    font-weight:300;
+    line-height:normal;
+    letter-spacing:0.2rem;
+    color:$darkBlue;
+}
+
+.custom-btn{
+    @extend %custom-btn;
+}
+
+.custom-btn:hover{
+    @extend %custom-btn-hover;
+}
+
 .navbar{
     @media screen and (min-width: 1155px){
-        padding:1.5rem 2.5rem;
+        padding:55px 2.5rem;
     }
 
     .navbar-brand{
@@ -76,13 +112,13 @@ $lightGrey: #CFD4D5;
             }
         }
         .reservation-btn{
+            @extend %custom-btn;
             @media screen and (max-width:992px) {
                 margin: 0 auto;
                 display: block;
                 width: 200px;
                 margin-top: 20px;
             }
-            @extend %custom-btn;
             @media screen and (max-width:1200px) {
                 padding: 10px 20px;
             }
@@ -97,7 +133,7 @@ $lightGrey: #CFD4D5;
     background-size:cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    height:500px;
+    height:calc(100vh - 140px);
     .slide-container{
         height:100%;
         .slide-text-column{
@@ -106,14 +142,72 @@ $lightGrey: #CFD4D5;
                 position:absolute;
                 top:50%;
                 transform: translateY(-50%);
-                color:white;
+                @media screen and (min-width: 1200px) {
+                    padding-left:40px;
+                }
+                @media screen and (max-width: 768px) {
+                    padding:20px;
+                }
                 h1{
+                    text-transform: uppercase;
                     text-align:right;
+                    font-size:2.8rem;
+                    font-weight:600;
+                    letter-spacing: 2px;
+                    line-height: normal;
+                    color:$darkBlue;
+                }
+                h2{
+                    text-transform: uppercase;
+                    text-align:right;
+                    font-size:2.4rem;
+                    font-weight:300;
+                    letter-spacing: 2px;
+                    line-height:1.7rem;
+                    color:$darkBlue;
                 }
                 p{
                     text-align:justify;
+                    @extend %paragraph;
+                    color:$darkBlue;
+                    &:before{
+                        content:'';
+                        display:block;
+                        height:4px;
+                        width:100%;
+                        background-color: rgba(#1B2028, 0.1);
+                        margin:20px 0px;
+                    }
+                }
+                .custom-btn{
+                    float:right;
                 }
             }
+        }
+    }
+}
+
+.full-width-padding{
+    padding:20px;
+    @media screen and (min-width: 768px) {
+        padding:80px;
+    }
+    @media screen and (min-width: 992px) {
+        .main-left-column{
+            padding-right:40px;
+        }
+        .main-right-column{
+            padding-left:40px;
+        }
+    }
+    h2{
+        padding-bottom:70px;
+        margin:0;
+        @media screen and (max-width: 992px) {
+            padding:20px 0px;
+        }
+        &:before{
+            @extend %before-vert-line;
         }
     }
 }
